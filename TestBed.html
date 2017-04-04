@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<!--SPA Application Shell-->
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Essay Writing Tool</title>
+
+
+<script src="js/jquery-2.1.1.min.js"></script>
+
+  <!-- CSS  -->
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!--swiper integration-->
+  <link rel="stylesheet" href="css/swiper.min.css">
+
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+<link rel="stylesheet" href="css/magic.min.css">
+
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+
+
+<script src="js/swiper.jquery.min.js"></script>
+
+<style>
+
+
+    .swiper-container {
+        width: 100%;
+
+    }
+
+
+    .swiper-slide {
+
+
+
+        /* Center slide text vertically *
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        display:table;*/
+    }
+
+
+    </style>
+
+
+</head>
+<body>
+
+
+  <!-- Modal Structure -->
+  <div id="resetStepsConfirm" class="modal">
+    <div class="modal-content cardBgColor1">
+      <h4>Resetting All Steps</h4>
+      <p>Please confirm that you wish to reset your progress in all steps</p>
+      <a href="#" class="resetStepsConfirm modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+
+    </div>
+
+
+  </div><!--close modal-->
+
+
+  <!-- Modal Structure -->
+  <div id="glossary" class="modal bottom-sheet" style="width:100%;">
+    <div class="modal-content cardBgColor1 flow-text">
+      <a href="#" style="float:right;" class="modal-action modal-close waves-effect waves btn">Close&nbsp;<i class="material-icons">&#xE5CD;</i></a>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div><!--close modal-->
+
+
+
+  <!-- Modal Structure -->
+  <div id="aboutAnnaBarker" class="modal bottom-sheet" style="width:100%;">
+    <div class="modal-content cardBgColor1 flow-text">
+      <a href="#!" style="float:right;" class="modal-action modal-close waves-effect waves btn">Close&nbsp;<i class="material-icons">&#xE5CD;</i></a>
+      <h4>About The Author</h4>
+      <p>Anna Barker (link), a published author and academic writing tutor, developed ALEX while working with university students as a Royal Literary Fund (link?) Writing Fellow.  Many of the problems students presented her with stemmed from not having a clear plan for their essay. </p>
+
+
+
+    </div>
+  </div><!--close modal-->
+
+
+
+  <!-- Modal Structure -->
+  <div id="startInfo" class="modal bottom-sheet " style="width:100%;">
+    <div class="modal-content cardBgColor1 flow-text">
+      <a href="#!" style="float:right;" class="modal-action modal-close waves-effect waves btn">Close&nbsp;<i class="material-icons">&#xE5CD;</i></a>
+      <h4>What do I need to get started?</h4>
+
+      <ul>
+        <li>4-6 highlighter pens in different colours. </li>
+
+        <li>A pencil and an eraser.</li>
+
+          <li>A roll of brown paper to draw your plan on. A3 paper is also fine. </li>
+
+          <li>A magazine folder (an empty cereal packet with the top cut off diagonally works just as well)  </li>
+
+          <li> A shelf or an area where you can stand up your books.</li>
+
+      </ul>
+
+    </div>
+  </div><!--close modal-->
+
+
+
+      <!--slide out menu-->
+      <ul id="slide-out" class="side-nav">
+
+        <div class="center">
+                  <h4>My Steps</h4>
+                  <div class=" stepsCompleted">
+                  <a id="button1" href="#" class="step1Screen step1ScreenStatus waves-effect waves-light myStepsBgIcon eptDark">1</a>
+                  </div>
+
+                  <div class=" stepsCompleted">
+                  <a  id="button2" href="#" class="step2Screen step2ScreenStatus waves-effect waves-light myStepsBgIcon eptDark ">2</a>
+                  </div>
+
+                  <div class=" stepsCompleted">
+                  <a id="button3" href="#" class="step3Screen step3ScreenStatus waves-effect waves-light myStepsBgIcon eptDark ">3</a>
+                  </div>
+
+                  <div class=" stepsCompleted">
+                  <a id="button4" href="#" class="step4Screen step4ScreenStatus waves-effect waves-light myStepsBgIcon eptDark ">4</a>
+                  </div>
+
+                  <div class=" stepsCompleted">
+                  <a id="button5" href="#" class="step5Screen step5ScreenStatus waves-effect waves-light myStepsBgIcon eptDark ">5</a>
+                  </div>
+
+
+
+
+
+
+                  <div class=" stepsCompleted">
+                  <a id="button6" href="#" class="step6Screen step6ScreenStatus waves-effect waves-light myStepsBgIcon eptDark">6</a>
+                  </div>
+
+                  <div class=" stepsCompleted">
+                  <a id="button7" href="#" class="step7Screen step7ScreenStatus waves-effect waves-light myStepsBgIcon eptDark">7</a>
+                  </div>
+
+                  <div class=" stepsCompleted">
+                  <a id="button8" href="#" class="step8Screen step8ScreenStatus waves-effect waves-light myStepsBgIcon eptDark">8</a>
+                  </div>
+
+                  <div class=" stepsCompleted">
+                  <a id="button9" href="#" class="step9Screen step9ScreenStatus waves-effect waves-light myStepsBgIcon eptDark">9</a>
+                  </div>
+
+                  <div class=" stepsCompleted">
+                  <a id="button10" href="#" class="step10Screen step10ScreenStatus waves-effect waves-light myStepsBgIcon eptDark">10</a>
+                  </div>
+
+                  <div><a href="#" id="resetSteps">Reset All Steps</a></div>
+
+            </div>
+
+
+
+      </ul>
+
+  <!--fixed nav test-->
+
+
+
+      <div class="navbar-fixed">
+
+
+
+        <nav class="fixedHeader">
+
+<!--<a href="#" data-activates="slide-out" class="button-collapse stepsMobile"><i class="material-icons">menu</i></a>-->
+<a href="#"  class="navBack waves-effect waves-light  "><i style="font-size:40px" class="material-icons">chevron_left</i><span>Back</span></a>
+
+      <!--<a href="#"  class="navNext waves-effect waves-light  "><i style="font-size:40px" class="material-icons">chevron_right</i></a>-->
+
+<div class="eptmainLogo"></div>
+<div class="headerTitle"></div>
+
+</nav>
+
+    </div>
+
+
+
+  <!-- Swiper controls SPA -->
+      <div class="swiper-container">
+          <div class="swiper-wrapper contentRoot">
+
+
+
+            <!--Step 1 Screen-->
+
+
+            <!--3.	http://www.clipconverter.cc/ -->
+
+
+
+
+            <div data-hash="screen0" class="screen0 swiper-slide">
+
+                <!--main content section-->
+                <div class="section">
+
+                    <!--content area-->
+
+                    <!--row 1 -->
+
+
+
+
+                    <!--content-->
+
+                    <div class="row">
+
+
+                        <!--card right indicator and control-->
+                        <div class="col s2left">
+
+                                <div class="card cardBgColor2">
+                                    <div class="">
+                                        <i class="material-icons">&#xE837</i>
+                                        <h4>Start</h4>
+                                    </div>
+                                </div>
+
+                        </div>
+                        <!--end card right controller-->
+
+
+
+                        <div class="col m12 leftcol">
+
+
+                            <div class="contentTextflowBox5">
+
+                                <div class="cardLogoSmall"></div>
+                                <h5>ABOUT THIS STEP</h5>
+
+                                <article class="col c6">
+
+
+                                  <div>
+
+
+                                  <video class="shoutOutVideoPlayer" controls preload="auto" style="margin-top: 25px; width:98%; border: 4px solid #fff; border-radius: 40px 40px 0px 0px;">
+
+                                  <source src="groupContent/videos/AlexFilm2.mp4" type="video/mp4" style="background-color:#ccff55;" />
+                                  <source src="videos/AlexFilm1.mp4" type="video/webm" style="background-color:#ccff55;" />
+
+
+                                  </video>
+
+
+                                </div><!--end video container-->
+                        <div class="shoutOutVideoPlayerBottom" style="margin-left:0px; margin-top:-10px; width:98%; height:70px; border-bottom: 4px solid #fff; border-left: 4px solid #fff; border-right: 4px solid #fff; background:#562482;">
+                        <span class="videoTextBottom" style="float:left; padding-top:16px; padding-left:6px; color:#fff;">An overview to the structure map by Dr Anna Barker. Length: 1 minute</span>
+                        </div>
+
+                                </article>
+
+
+                                <article class="col c6 borderRightContent">
+
+
+                                    <p class="flow-text contentText left-align">
+
+                                        Make sure you have read the step called about this app. It will tell you what materials you need and give you a useful overview of how the app works.
+
+
+
+                                                                Now to your essay. A common mistake when students get their essay question or assessment criteria is to start writing straight away. Time spent familiarising yourself with the task set is well spent. By really understanding what’s been asked of you, both
+                                        your reading and your writing becomes very focused.
+
+                                                            Let’s look at our example of <a href="#" class="_assessmentCriteria inContentLink">assessment criteria.</a> It’s quite dense, isn’t it? I wonder if we can’t make it a bit more friendly? Rewriting the individual tasks is a good
+                                        way of making sure you understand them. Of course you need to be careful not to inadvertently change the task, but changing a few words for simpler ones that mean the same thing can really help to cement in your mind what it
+                                        is you need to do. Here’s the same <a href="#" class="_criteriareWritten inContentLink">assessment criteria rewritten.</a>
+
+
+                                        Do you know what all the different <a href="#" _to="screen1" class="_gloss inContentLink">essay terms</a> mean? These are the verbs – the words that tell you what to do. <a href="#" class="waves-effect waves-light glossaryInlineLink"
+                                            _glossaryData="describe"> Describe;&nbsp;</a> <a href="#" class="waves-effect waves-light glossaryInlineLink" _glossaryData="define"> Define;&nbsp;</a><a href="#" class="waves-effect waves-light glossaryInlineLink" _glossaryData="compare"> Compare;&nbsp;</a>
+                                        <a href="#" class="waves-effect waves-light glossaryInlineLink" _glossaryData="analyse"> Analyse.</a> Make sure you understand their different meanings.
+
+
+                                        When you’re done don’t bury the essay question or assessment criteria in a folder. Pin it up, put it on your wall, stick it to the front of your folder. Make it visible.
+                                    </p>
+
+
+                                </article>
+
+
+
+                            </div>
+
+                            <span class="contentTextFooter">
+
+            <a href="#"  class="left"><span>Glossary of Key Terms:</span></a>
+
+                            </span>
+                        </div>
+                        <!--close col-->
+
+
+                        <!--card right indicator and control-->
+                        <div class="col s2right">
+                            <a class="nextScreen">
+                                <div class="card cardBgColor2">
+                                    <div class="">
+                                        <i class="material-icons">&#xE5CC</i>
+                                        <h4>Next</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--end card right controller-->
+
+
+
+
+                    </div>
+                    <!--close row-->
+
+
+
+                </div>
+                <!--close section-->
+
+                <!--close step -->
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div data-hash="screen1" class="screen1 swiper-slide">
+
+                <!--main content section-->
+                <div class="section">
+
+                    <!--content area-->
+
+                    <!--row 1 -->
+
+
+
+
+                    <!--content-->
+
+                    <div class="row">
+
+
+                        <!--card right indicator and control-->
+                        <div class="col s2left">
+                            <a class="prevScreen">
+                                <div class="card cardBgColor2">
+                                    <div class="">
+                                        <i class="material-icons">&#xE5CB</i>
+                                        <h4>Previous</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--end card right controller-->
+
+
+
+                        <div class="col m12 leftcol">
+
+
+                            <div class="contentTextflowBox5">
+
+                                <div class="cardLogoSmall"></div>
+                                <h5>TASKS</h5>
+
+                                <article class="col c6">
+
+                                </article>
+
+
+
+                                <article class="col c6 borderRightContent">
+                                    <ul class="flow-text-ul">
+
+                                        <li>Take ownership of the assessment criteria/essay task. Make sure you understand it. If it’s a question make sure you understand what it asks of you. </li>
+
+                                        <li>Use words you don’t understand? Ask your tutor. What does ‘describe’ mean? How is it different from ‘evaluate’, ‘review’, ‘compare’, ‘reflect’? These verbs are your ‘to do’ list for the essay so you need to make sure you’re
+                                            going to be doing the right things. Check out the <a href="#" _to="screen1" class="_gloss inContentLink">glossary</a> to be sure.</li>
+
+
+
+                                        <li>If you need to, REWRITE the tasks into simple sentences you are more comfortable with. You could also try to rephrase a statement as a question.</li>
+
+
+                                        <li>Then pin it up on your wall so you can keep referring back to it and make sure you’re staying on track.</li>
+
+                                    </ul>
+
+
+
+
+                                </article>
+
+
+                            </div>
+
+
+
+                            <div class="contentTextflowBox5" style="margin-top:60px;">
+
+                                <div class="cardLogoSmall"></div>
+                                <h5>LEARN MORE</h5>
+
+
+                                <article class="col c6">
+
+
+                                  </article>
+
+                                <article class="col c6 borderRightContent">
+                                    <p class="flow-text contentText left-align">
+
+                                        Example Assessment Criteria To follow Example Assessment Criteria rewritten To follow
+
+
+                                    </p>
+
+                                </article>
+
+                            </div>
+
+
+
+
+                            <span class="contentTextFooter">
+
+            <a href="#"  class="left"><span>Glossary of Key Terms:</span></a>
+
+                            </span>
+                        </div>
+                        <!--close col-->
+
+
+                        <!--card right indicator and control-->
+                        <div class="col s2right">
+                            <a class="nextScreen">
+                                <div class="card cardBgColor2">
+                                    <div class="">
+                                        <i class="material-icons">&#xE5CC</i>
+                                        <h4>Next</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--end card right controller-->
+
+
+
+
+                    </div>
+                    <!--close row-->
+
+
+
+                </div>
+                <!--close section-->
+
+                <!--close step -->
+            </div>
+
+
+
+
+
+
+            <script>
+                //content adapter version 2
+                //destroy previous instance ready to create a new instance
+                //swiper.destroy(true, true);
+                //Need to put the Swiper into the dynamicaly generated content!
+                //initialize swiper SPA control for this content
+                var swiper = new Swiper('.swiper-container', {
+                    // If we need pagination
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    //hashnav: true,
+                    /*pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',*/
+
+                    spaceBetween: 0,
+
+
+                    //Need to change next and back col heights to match content height
+
+
+                    onInit: function(swiper) {
+
+
+                        thisScreen = swiper.activeIndex;
+
+                        var startScreen = $(".screen" + thisScreen).attr("data-hash");
+
+
+
+                        var card = $("." + startScreen + " .m12").height()-55 ;
+
+                        $(".s2left .card").height(card);
+                        $(".s2right .card").height(card);
+
+
+                        setUserHistory(thisScreen, currentStep);
+
+                    },
+
+                    // Add one more handler for this event
+                    onSlideChangeEnd: function(swiper) {
+
+
+                      thisScreen = swiper.activeIndex;
+
+                      var startScreen = $(".screen" + thisScreen).attr("data-hash");
+
+                      var card = $("." + startScreen + " .m12").height() - 55;
+
+                      $(".s2left .card").height(card);
+                      $(".s2right .card").height(card);
+
+
+
+                        setUserHistory(thisScreen, currentStep);
+
+                    },
+
+
+
+                    paginationBulletRender: function(index, className) {
+                        return '<span class="' + className + '"></span>';
+                    }
+                });
+
+                $( window ).resize(function() {
+                  thisScreen = swiper.activeIndex;
+                  var startScreen = $(".screen" + thisScreen).attr("data-hash");
+
+                  var card = $("." + startScreen + " .m12").height() - 55;
+
+                  $(".s2left .card").height(card);
+                  $(".s2right .card").height(card);
+
+
+                });
+
+
+            </script>
+
+
+
+
+
+
+
+
+        </div><!--close swiper wrapper and contentRoot-->
+</div><!--close swiper conatiner-->
+
+
+
+
+<!--fixed footer-->
+<footer>
+  <span class="floatspan1"><a class="button-collapse btn-floating btn-large waves-effect waves-light red mySteps right" data-activates="slide-out"  ><i class="material-icons">&#xE87C;</i></a><div>Steps</div></span>
+  <!--<span class="floatspan2"><a class="btn-floating btn-large waves-effect waves-light red right modal-trigger"  href="#moreInfo" ><i class="material-icons">&#xE88E;</i></a><div>About</div></span>-->
+  <span class="floatspan3"><a class="btn-floating btn-large waves-effect waves-light red right modal-trigger"  href="#aboutAnnaBarker"><i class="material-icons">&#xE55A;</i></a><div>Credits</div></span>
+
+  <span class="stepsCheckBoxPos">
+  <form action="#" class="stepsCheckBox">
+
+
+  </form>
+
+
+
+  </span>
+
+
+<!--progress checkbox-->
+
+
+  <!-- pagination-->
+  <span style="z-index: 10; position:absolute; width:100%; margin: 0 auto; margin-top:-10px;" class="swiper-pagination">
+
+
+
+
+
+
+</footer>
+
+
+
+
+
+  <!--  Scripts-->
+  <script src="js/materialize.min.js"></script>
+  <script src="js/masonry.pkgd.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <!--<script src="js/changeAppPage.js"></script>-->
+  <script src="js/groupContentControl.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/progressControl.js"></script>
+  <script src="js/userAddedContent.js"></script>
+
+
+
+
+  </body>
+</html>

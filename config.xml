@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.rlf.rc25"
+        version     = "1.1.25"
+        versionCode = "25" >
+
+        <!-- versionCode is optional and Android only -->
+
+        <preference name="phonegap-version" value="cli-6.3.0" />
+
+        <name>Essay Writing Tool - App Version Proto 25 beta</name>
+
+        <description>
+      Build 25 beta
+        </description>
+
+        <author href="http://www.wurf.co.uk" email="andrewbingham@gmail.com">
+        Andrew Bingham
+        </author>
+
+        <gap:platform name="android" />
+        <gap:platform name="ios" />
+
+        <preference name="permissions" value="none"/>
+
+
+
+
+        <!-- ANDROID * ANDROID * ANDROID -->
+        <preference name="SplashScreen" value="splash" />
+        <preference name="SplashScreenDelay" value="5000" />
+        <!-- iOS * iOS * iOS -->
+        <preference name="auto-hide-splash-screen" value="false" />  <!-- iOS -->
+        <preference name="show-splash-screen-spinner" value="false" />  <!-- iOS -->
+
+
+        <icon src="icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
+        <icon src="icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
+        <preference name="fullscreen"                 value="true" />
+		    <gap:splash src="splashScreen/spashScreen_xxxhdpi.png" gap:platform="ios"     width="1024" height="768" />
+
+
+
+
+		<!--<access origin="*" />-->
+    <access origin="https://www.wurf.co.uk/RLF25/" />
+    <access origin="https://fonts.googleapis.com/" />
+
+
+    </widget>

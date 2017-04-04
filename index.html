@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--SPA Application Shell-->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>Essay Writing Tool - version 25 beta</title>
+
+    <!--prevent the browser from making ico requests-->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+
+    <!-- CSS  -->
+    <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!--swiper integration-->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <link rel="stylesheet" href="css/magic.min.css">
+
+
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+
+
+    <script src="js/swiper.jquery.min.js" async></script>
+
+
+
+</head>
+
+<body>
+
+    <!--tracking current screen for main menu-->
+    <div class="mainMenuScreen" style="visibility:hidden" _mainMenuScreen=""></div>
+
+    <!-- Modal Structure -->
+    <div id="resetStepsConfirm" class="modal">
+        <div class="modal-content cardBgColor1">
+            <h4>Resetting All Steps</h4>
+            <p>Please confirm that you wish to reset your progress in all steps</p>
+            <a href="#" class="resetStepsConfirm modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+
+        </div>
+
+
+    </div>
+    <!--close modal-->
+
+
+
+    <!-- Modal Structure -->
+    <div id="userHistoryPrompt" class="modal bottom-sheet">
+        <div class="modal-content cardBgColor1">
+            <div class="currentStep" style="visibility:hidden" _currentStep=""></div>
+            <div class="currentScreen" style="visibility:hidden" _currentScreen=""></div>
+
+            <h4>Welcome Back!</h4>
+            <p>Would you like to return to where you left off?</p>
+            <a href="#" class="userHistoryConfirmYes modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+            <a href="#" class="userHistoryConfirmNo modal-action modal-close waves-effect waves-green btn-flat">No</a>
+        </div>
+
+
+    </div>
+    <!--close modal-->
+
+
+
+    <!-- Modal Structure -->
+    <div id="glossaryModal" class="modal bottom-sheet" style="width:100%;">
+        <div class="modal-content cardBgColor1 flow-text">
+            <a href="#" style="float:right;" class="modal-action modal-close waves-effect waves btn">Close&nbsp;<i class="material-icons">&#xE5CD;</i></a>
+
+
+            <div class="glossaryContent"></div>
+
+
+
+
+
+
+        </div>
+    </div>
+    <!--close modal-->
+
+
+
+    <!-- Modal Structure -->
+    <div id="aboutAnnaBarker" class="modal bottom-sheet" style="width:100%;">
+        <div class="modal-content cardBgColor1 flow-text">
+            <a href="#!" style="float:right;" class="modal-action modal-close waves-effect waves btn">Close&nbsp;<i class="material-icons">&#xE5CD;</i></a>
+            <h4>About The Author</h4>
+            <p>Anna Barker: Anna is a journalist and published author of two novels, The Floating Island and Before I Knew Him (Random House). She is also an academic writing tutor and Royal Literary Fund Consultant Fellow. She developed ALEX while helping
+                students develop their academic writing at Teesside University.
+            </p>
+
+            <p>
+                Royal Literary Fund: The Royal Literary Fund is a benevolent fund for professional published authors; it is funded exclusively by bequests and donations from writers and others who wish to help writers. The RLF also runs a Fellowship Scheme in partnership
+                with universities. Writers work one-to-one with students, using their expertise in language and communication to help them develop their essay writing. www.rlf.org.uk
+            </p>
+
+            <p>
+
+                Teesside University: Design (Stephen Murray), App development, Asset Production and build (Andrew Bingham).</p>
+
+
+
+        </div>
+    </div>
+    <!--close modal-->
+
+
+
+
+
+    <div class="navbar-fixed">
+
+        <div class="eptmainLogo center-align"></div>
+        <nav class="fixedHeader">
+            <!--<nav class="fixedHeader headroom headroomunpinned">-->
+
+            <!--<a href="#" data-activates="slide-out" class="button-collapse stepsMobile"><i class="material-icons">menu</i></a>-->
+            <a href="#" class="navBack waves-effect waves-light " style="visibility:hidden;"><i style="font-size:40px" class="material-icons">&#xE5CB;</i><span>Menu</span></a>
+
+            <!--<a href="#"  class="navNext waves-effect waves-light  "><i style="font-size:40px" class="material-icons">chevron_right</i></a>-->
+
+
+            <div class="headerTitle"></div>
+
+        </nav>
+
+    </div>
+
+
+
+    <!-- Swiper controls SPA -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper contentRoot">
+
+
+
+
+        </div>
+        <!--close swiper wrapper and contentRoot-->
+    </div>
+    <!--close swiper conatiner-->
+
+
+
+
+    <!--fixed footer-->
+    <footer>
+
+        <span class="floatspan3"><a class="btn-floating btn-large waves-effect waves-light red right modal-trigger"  href="#aboutAnnaBarker"><i class="material-icons">&#xE55A;</i></a><div>Credits</div></span>
+
+        <div class="footerTopMenu">
+
+
+            <h5>My Progress</h5>
+
+
+            <span class="showFooter">
+                  <a href="#" class="showFooterBtn"><div>
+
+                  Show Progress</div>
+                  <i class="material-icons">&#xE5CE;</i></a>
+                </span>
+
+        </div>
+
+        <!--<span class="floatspan1"><a class="button-collapse btn-floating btn-large waves-effect waves-light red mySteps right" data-activates="slide-out"  ><i class="material-icons">&#xE87C;</i></a><div>Steps</div></span>-->
+        <!--<span class="floatspan2"><a class="btn-floating btn-large waves-effect waves-light red right modal-trigger"  href="#moreInfo" ><i class="material-icons">&#xE88E;</i></a><div>About</div></span>-->
+
+<div class="footerPrev"><a class="footerPrevbtn"><i class="material-icons flash_2">&#xE5CB;</i></a></div>
+
+        <span class="stepsCheckBoxPos">
+  <form action="#" class="stepsCheckBox">
+
+
+  </form>
+
+
+
+  </span>
+
+
+        <!--progress checkbox-->
+
+
+        <!-- pagination-->
+        <span style="z-index: 10; position:absolute; width:100%; margin: 0 auto; margin-top:-10px; visibility:hidden;" class="swiper-pagination"></span>
+
+
+        <span class="myProgress">
+
+
+      <div class=" stepsCompleted">
+      <a id="button1" href="#" class="step1Screen step1ScreenStatus waves-effect waves-light myStepsBgIcon eptDark">1</a>
+      </div>
+
+      <div class=" stepsCompleted">
+      <a  id="button2" href="#" class="step2Screen step2ScreenStatus waves-effect waves-light myStepsBgIcon eptDark ">2</a>
+      </div>
+
+      <div class=" stepsCompleted">
+      <a id="button3" href="#" class="step3Screen step3ScreenStatus waves-effect waves-light myStepsBgIcon eptDark ">3</a>
+      </div>
+
+      <div class=" stepsCompleted">
+      <a id="button4" href="#" class="step4Screen step4ScreenStatus waves-effect waves-light myStepsBgIcon eptDark ">4</a>
+      </div>
+
+      <div class=" stepsCompleted">
+      <a id="button5" href="#" class="step5Screen step5ScreenStatus waves-effect waves-light myStepsBgIcon eptDark ">5</a>
+      </div>
+
+      <div class="stepsCompleted">
+
+        <span class="hideFooter">
+            <a href="#" class="hideFooterBtn"><div>
+
+            Hide</div>
+            <i class="material-icons">&#xE5CF;</i></a>
+          </span>
+
+        </div>
+
+        <div class=" stepsCompleted" style="">
+            <a id="button6" href="#" class="step6Screen step6ScreenStatus waves-effect waves-light myStepsBgIcon eptDark">6</a>
+        </div>
+
+        <div class=" stepsCompleted">
+            <a id="button7" href="#" class="step7Screen step7ScreenStatus waves-effect waves-light myStepsBgIcon eptDark">7</a>
+        </div>
+
+        <div class=" stepsCompleted">
+            <a id="button8" href="#" class="step8Screen step8ScreenStatus waves-effect waves-light myStepsBgIcon eptDark">8</a>
+        </div>
+
+        <div class=" stepsCompleted">
+            <a id="button9" href="#" class="step9Screen step9ScreenStatus waves-effect waves-light myStepsBgIcon eptDark">9</a>
+        </div>
+
+        <div class=" stepsCompleted">
+            <a id="button10" href="#" class="step10Screen step10ScreenStatus waves-effect waves-light myStepsBgIcon eptDark">10</a>
+        </div>
+
+        <!--<div><a href="#" id="resetSteps">Reset All Steps</a></div>-->
+
+
+
+        </span>
+
+
+
+
+    </footer>
+
+
+
+
+
+    <!--  Scripts-->
+    <!--<script src="js/headroom.min.js"></script>-->
+    <script src="js/materialize.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/groupContentControl.js"></script>
+    <script src="js/changeAppPage.js"></script>
+
+
+    <script src="js/progressControl.js"></script>
+    <script src="js/swipeFlash.js"></script>
+
+    <script src="js/init.js"></script>
+
+
+    <script>
+        // grab an element
+        //  var myElement = document.querySelector("nav");
+        // construct an instance of Headroom, passing the element
+        //var headroom = new Headroom(myElement);
+        // initialise
+        //  headroom.init();
+
+        //getUserHistory();
+    </script>
+
+    <style>
+
+    </style>
+
+
+</body>
+
+</html>
